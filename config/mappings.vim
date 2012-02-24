@@ -31,9 +31,18 @@ let mapleader = ','
 " }}}
 " Fix broken vim regexes when searching {{{
 	" http://stevelosh.com/blog/2010/09/coming-home-to-vim/#important-vimrc-lines
+	function! VerymagicSearchCommand()
+		" Checks if we already specified that we're using very magic regexps
+		" in the search command
+		if match(getcmdline(), '\\v') == -1
+			return 's/\v'
+		endif
+
+		return 's/'
+	endfunction
 	nnoremap / /\v
 	vnoremap / /\v
-	cnoremap s/ s/\v
+	cnoremap s/ <C-R>=VerymagicSearchCommand()<CR>
 " }}}
 " Split window mappings {{{
 	nnoremap K <C-w>k
