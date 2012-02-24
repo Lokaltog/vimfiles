@@ -1,25 +1,6 @@
-augroup General " {{{
-	autocmd!
-	" Custom psql highlighting {{{
-		au BufNewFile,BufRead *.sql set ft=pgsql
-	" }}}
-	" Nginx highlighting {{{
-		au BufNewFile,BufRead /etc/nginx/conf/* set ft=nginx
-	" }}}
-	" Load .Xdefaults/.Xresources on save {{{
-		au BufWritePost,FileWritePost ~/.Xdefaults,~/.Xresources silent! !xrdb -load % >/dev/null 2>&1
-	" }}}
-	" Support Genshi templates {{{
-		au FileType html set ft=genshi
-	" }}}
-	" Enforce gitcommit filetype {{{
-		au! BufReadPost COMMIT_EDITMSG,*/COMMIT_EDITMSG set ft=gitcommit
-	" }}}
-augroup END " }}}
 augroup Formatting " {{{
 	autocmd!
 	" Format plain text and e-mails correctly {{{
-		au BufNewFile,BufRead *.txt setl ft=text
 		au FileType mail,text,tex setl formatoptions+=t formatoptions-=l textwidth=72 colorcolumn=72
 	" }}}
 	" Use foldmarkers for specific filetypes {{{
