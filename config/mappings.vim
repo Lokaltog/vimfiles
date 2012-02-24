@@ -9,7 +9,6 @@ let mapleader = ','
 	nnoremap <silent> <F11> :CtrlPCurFile<CR>
 " }}}
 " Tabularize mappings {{{
-	vnoremap <silent> <Leader>a=> :Tabularize /=>/l0l1<CR>
 	vnoremap <silent> <Leader>a=  :Tabularize /=/l0l1<CR>
 	vnoremap <silent> <Leader>a,  :Tabularize /,/l0l1<CR>
 	vnoremap <silent> <Leader>a:  :Tabularize /:/l0l1<CR>
@@ -28,10 +27,7 @@ let mapleader = ','
 	nnoremap <silent> <Leader>/ :nohlsearch<CR>
 " }}}
 " Sudo write {{{
-	command! -bar -nargs=0 W  silent! exec "write !sudo tee % >/dev/null"  | silent! edit!
-" }}}
-" Write and make file executable {{{
-	command! -bar -nargs=0 WX silent! exec "write !chmod a+x % >/dev/null" | silent! edit!
+	command! -bar -nargs=0 W silent! exec "write !sudo tee % >/dev/null" | silent! edit!
 " }}}
 " Fix broken vim regexes when searching {{{
 	" http://stevelosh.com/blog/2010/09/coming-home-to-vim/#important-vimrc-lines
@@ -39,19 +35,20 @@ let mapleader = ','
 	vnoremap / /\v
 	cnoremap s/ s/\v
 " }}}
-" Easier bracket matching {{{
-	nnoremap <Tab> %
-" }}}
 " Split window mappings {{{
 	nnoremap K <C-w>k
 	nnoremap J <C-w>j
 	nnoremap H <C-w>h
 	nnoremap L <C-w>l
 
-	nmap <C-k> <C-w>s
-	nmap <C-j> <C-w>sJ
-	nmap <C-h> <C-w>v
-	nmap <C-l> <C-w>vL
+	nnoremap <C-k> <C-w>s
+	nnoremap <C-j> <C-w>sJ
+	nnoremap <C-h> <C-w>v
+	nnoremap <C-l> <C-w>vL
+" }}}
+" Re-indent pasted text {{{
+	nnoremap <Leader>p p'[v']=
+	nnoremap <Leader>P P'[v']=
 " }}}
 " Repurpose arrow keys to move lines {{{
 	" Inspired by http://jeetworks.com/node/89
@@ -102,38 +99,22 @@ let mapleader = ','
 	" Arrow key remapping:
 	" Up/Dn = move line up/dn
 	" Left/Right = indent/unindent
-	function! SetArrowKeysAsTextShifters()
-		" Normal mode
-		nnoremap <silent> <Left>   <<
-		nnoremap <silent> <Right>  >>
-		nnoremap <silent> <Up>     <Esc>:call <SID>MoveLineUp()<CR>
-		nnoremap <silent> <Down>   <Esc>:call <SID>MoveLineDown()<CR>
 
-		" Visual mode
-		vnoremap <silent> <Left>   <gv
-		vnoremap <silent> <Right>  >gv
-		vnoremap <silent> <Up>     <Esc>:call <SID>MoveVisualUp()<CR>
-		vnoremap <silent> <Down>   <Esc>:call <SID>MoveVisualDown()<CR>
+	" Normal mode
+	nnoremap <silent> <Left>   <<
+	nnoremap <silent> <Right>  >>
+	nnoremap <silent> <Up>     <Esc>:call <SID>MoveLineUp()<CR>
+	nnoremap <silent> <Down>   <Esc>:call <SID>MoveLineDown()<CR>
 
-		" Insert mode
-		inoremap <silent> <Left>   <C-D>
-		inoremap <silent> <Right>  <C-T>
-		inoremap <silent> <Up>     <C-O>:call <SID>MoveLineUp()<CR>
-		inoremap <silent> <Down>   <C-O>:call <SID>MoveLineDown()<CR>
-	endfunction
+	" Visual mode
+	vnoremap <silent> <Left>   <gv
+	vnoremap <silent> <Right>  >gv
+	vnoremap <silent> <Up>     <Esc>:call <SID>MoveVisualUp()<CR>
+	vnoremap <silent> <Down>   <Esc>:call <SID>MoveVisualDown()<CR>
 
-	call SetArrowKeysAsTextShifters()
-" }}}
-" Disable normal mode movement keys {{{
-	noremap  <Home> <NOP>
-	noremap  <End>  <NOP>
-" }}}
-" Paste mode toggle {{{
-	nnoremap <silent> <F12> :set paste!<CR>
-" }}}
-" Re-indent pasted text {{{
-	nnoremap <Leader>p p
-	nnoremap <Leader>P P
-	nnoremap p p'[v']=
-	nnoremap P P'[v']=
+	" Insert mode
+	inoremap <silent> <Left>   <C-D>
+	inoremap <silent> <Right>  <C-T>
+	inoremap <silent> <Up>     <C-O>:call <SID>MoveLineUp()<CR>
+	inoremap <silent> <Down>   <C-O>:call <SID>MoveLineDown()<CR>
 " }}}

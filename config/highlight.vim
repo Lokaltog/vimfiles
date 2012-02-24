@@ -3,6 +3,3 @@
 
 	match ProblematicSpaces / \+\ze\t/
 " }}}
-" Highlight conflict markers {{{
-	match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-" }}}
