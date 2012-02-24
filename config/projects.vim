@@ -5,15 +5,16 @@ catch
 endtry
 
 if ! empty(s:projectpath) && isdirectory(s:projectpath)
-	let s:projectsessionfile = s:projectpath . "/vim/session.vim"
+	let s:sessionfile = s:projectpath . '/vim/session.vim'
 
-	let &path = s:projectpath . "/**," . &path
-	let &tags = s:projectpath . "/vim/tags," . &tags
+	silent! exec 'cd '. s:projectpath
 
-	" CScope preferences {{{
+	let &path = s:projectpath . '/**,' . &path
+	let &tags = s:projectpath . '/vim/tags,' . &tags
+
+	" CScope settings {{{
 		set nocsverb
-		silent! exec "cd " . s:projectpath
-		silent! exec "cscope add " . s:projectpath . "/vim/cscope.out"
+		silent! exec 'cscope add '. s:projectpath . '/vim/cscope.out'
 		set csverb
 
 		set cscopetag
@@ -21,11 +22,7 @@ if ! empty(s:projectpath) && isdirectory(s:projectpath)
 	" }}}
 	augroup Project " {{{
 		autocmd!
-		" Highlight project tags {{{
-			au BufReadPost,CursorHold *.php silent! exec "source " . s:projectpath . "/vim/tags.php-hl.vim"
-		" }}}
-		" Highlight project tags {{{
-			au BufReadPost,CursorHold *.py  silent! exec "source " . s:projectpath . "/vim/tags.python-hl.vim"
-		" }}}
+
+		au BufReadPost,CursorHold * silent! exec 'source '. s:projectpath .'/vim/tags.'. expand('%:e') .'.hl.vim'
 	augroup END " }}}
 endif
