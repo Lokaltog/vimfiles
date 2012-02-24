@@ -31,3 +31,56 @@ if !exists("php_ignore_phpdoc")
 	hi def link phpDocParam     Function
 	hi def link phpCommentStar  Comment
 endif
+
+" PHP FoldText function {{{
+	function! FoldText_PHP()
+		" This function uses code from phpfolding.vim
+		let l:curline = v:foldstart
+		let l:line = getline(l:curline)
+		" Did we fold a DocBlock? {{{
+			if strridx(l:line, '#@+') != -1
+				if (matchstr(l:line, '^.*#@+..*$') == l:line)
+					let l:line = substitute(l:line, '^.*#@+', '', 'g') . ' ' . g:phpDocBlockIncludedPostfix
+				else
+					let l:line = getline(l:curline + 1) . ' ' . g:phpDocBlockIncludedPostfix
+				endif
+		" }}}
+		" Did we fold an API comment block? {{{
+			elseif strridx(l:line, "\/\*\*") != -1
+				let s:state = 0
+
+				while l:curline < v:foldend
+					let l:loopline = getline(l:curline)
+
+					if s:state == 0 && strridx(l:loopline, "\*\/") != -1
+						let s:state = 1
+					elseif s:state == 1 && (matchstr(l:loopline, '^\s*$') != l:loopline)
+						break
+					endif
+
+					let l:curline = l:curline + 1
+				endwhile
+
+				let l:line = getline(l:curline)
+			endif
+		" }}}
+		" Cleanup {{{
+			let l:line = substitute(l:line, '/\*\|\*/\d\=', '', 'g')
+			let l:line = substitute(l:line, '^\s*\*\?\s*', '', 'g')
+			let l:line = substitute(l:line, '{$', '', 'g')
+			let l:line = substitute(l:line, '($', '(...)', 'g')
+		" }}}
+		" Append postfix if there is PhpDoc in the fold {{{
+			if l:curline != v:foldstart
+				let l:line = l:line . " " . g:phpDocIncludedPostfix . " "
+			endif
+		" }}}
+		return FoldText(l:line)
+	endfunction
+" }}}
+" Enable PHP FoldText function {{{
+	let g:DisableAutoPHPFolding = 1
+
+	au FileType php EnableFastPHPFolds
+	au FileType php set foldtext=FoldText() | setl foldtext=FoldText_PHP()
+" }}}
