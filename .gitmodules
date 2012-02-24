@@ -91,3 +91,6 @@
 [submodule "ftbundle/stylus/stylus"]
 	path = ftbundle/stylus/stylus
 	url = git://github.com/wavded/vim-stylus.git
+[submodule "ftbundle/python/simpylfold"]
+	path = ftbundle/python/simpylfold
+	url = git://github.com/tmhedberg/SimpylFold.git
