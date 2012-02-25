@@ -7,6 +7,7 @@ let mapleader = ','
 	nnoremap <silent> <F9>  :CtrlPBuffer<CR>
 	nnoremap <silent> <F10> :CtrlP<CR>
 	nnoremap <silent> <F11> :CtrlPCurFile<CR>
+	nnoremap <silent> <F12> :NERDTreeToggle<CR>
 " }}}
 " Tabularize mappings {{{
 	vnoremap <silent> <Leader>a=  :Tabularize /=/l0l1<CR>

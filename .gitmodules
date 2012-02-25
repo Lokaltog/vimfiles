@@ -44,6 +44,9 @@
 [submodule "bundle/camelcasemotion"]
 	path = bundle/camelcasemotion
 	url = git://github.com/bkad/CamelCaseMotion.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
 
 # ftbundles
 [submodule "ftbundle/javascript/javascript"]
