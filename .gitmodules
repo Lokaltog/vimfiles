@@ -69,7 +69,7 @@
 	url = git://github.com/othree/html5.vim.git
 [submodule "ftbundle/nginx/nginx"]
 	path = ftbundle/nginx/nginx
-	url = git://github.com/vim-scripts/nginx.vim.git
+	url = git://github.com/mutewinter/nginx.vim.git
 [submodule "ftbundle/haml/haml"]
 	path = ftbundle/haml/haml
 	url = git://github.com/tpope/vim-haml.git
