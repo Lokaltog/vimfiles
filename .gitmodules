@@ -97,3 +97,6 @@
 [submodule "ftbundle/python/simpylfold"]
 	path = ftbundle/python/simpylfold
 	url = git://github.com/tmhedberg/SimpylFold.git
+[submodule "bundle/zencoding"]
+	path = bundle/zencoding
+	url = git://github.com/mattn/zencoding-vim.git
