@@ -100,3 +100,6 @@
 [submodule "bundle/zencoding"]
 	path = bundle/zencoding
 	url = git://github.com/mattn/zencoding-vim.git
+[submodule "ftbundle/html/matchtag"]
+	path = ftbundle/html/matchtag
+	url = git://github.com/gregsexton/MatchTag.git
