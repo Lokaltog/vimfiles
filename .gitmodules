@@ -47,6 +47,12 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = git://github.com/ervandew/supertab.git
+[submodule "bundle/zencoding"]
+	path = bundle/zencoding
+	url = git://github.com/mattn/zencoding-vim.git
 
 # ftbundles
 [submodule "ftbundle/javascript/javascript"]
@@ -97,12 +103,6 @@
 [submodule "ftbundle/python/simpylfold"]
 	path = ftbundle/python/simpylfold
 	url = git://github.com/tmhedberg/SimpylFold.git
-[submodule "bundle/zencoding"]
-	path = bundle/zencoding
-	url = git://github.com/mattn/zencoding-vim.git
 [submodule "ftbundle/html/matchtag"]
 	path = ftbundle/html/matchtag
 	url = git://github.com/gregsexton/MatchTag.git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = git://github.com/ervandew/supertab.git
