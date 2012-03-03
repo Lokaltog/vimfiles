@@ -1,6 +1,7 @@
 let mapleader = ','
 
 " F key mappings {{{
+	nnoremap <silent> <F2>  :set paste!<CR>
 	nnoremap <silent> <F6>  :set number!<CR>
 	nnoremap <silent> <F7>  :TagbarToggle<CR>
 	nnoremap <silent> <F8>  :GundoToggle<CR>
