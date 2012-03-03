@@ -106,3 +106,6 @@
 [submodule "ftbundle/html/matchtag"]
 	path = ftbundle/html/matchtag
 	url = git://github.com/gregsexton/MatchTag.git
+[submodule "ftbundle/python/python-mode"]
+	path = ftbundle/python/python-mode
+	url = git://github.com/klen/python-mode.git
