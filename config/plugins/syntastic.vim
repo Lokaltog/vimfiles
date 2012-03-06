@@ -1,6 +1,11 @@
-let g:syntastic_enable_signs = 1
-let g:syntastic_auto_loc_list = 0
+let g:syntastic_enable_signs = 0
+let g:syntastic_mode_map = {
+	\ 'mode': 'active',
+	\ 'passive_filetypes': ['c', 'javascript'],
+	\ }
 
-" Disable some syntax checkers
-let loaded_c_syntax_checker = 1
-let loaded_javascript_syntax_checker = 1
+" Configure flake8 syntax checker
+"
+" I'm using tabs for indentation and spaces for alignment in Python code, and
+" I'd like flake8 to not warn me about that (even though it "violates" PEP-8).
+let g:syntastic_python_checker_args = '--ignore=W191'
