@@ -1,0 +1,2 @@
+setl colorcolumn=
+setl nolist
