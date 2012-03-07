@@ -109,3 +109,6 @@
 [submodule "ftbundle/python/python-mode"]
 	path = ftbundle/python/python-mode
 	url = git://github.com/klen/python-mode.git
+[submodule "ftbundle/css/css3"]
+	path = ftbundle/css/css3
+	url = git://github.com/hail2u/vim-css3-syntax.git
