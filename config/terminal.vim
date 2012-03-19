@@ -27,12 +27,4 @@ if &term =~ "rxvt-256color"
 		set listchars=tab:⋮\ ,trail:⌴,eol:·,precedes:◂,extends:▸
 		set showbreak=↪
 	" }}}
-	" Disable list/listchars on selected filetypes {{{
-		augroup ListFiletypes
-			autocmd!
-
-			au FileType text,tex,latex setl nolist
-			au FileType diff setl listchars+=trail:\ " Disable trailing space chars in diff files
-		augroup END
-	" }}}
 endif
