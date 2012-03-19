@@ -2,24 +2,25 @@ if &t_Co == 256
 	colo distinguished
 endif
 
-if &term =~ "rxvt-256color"
+if ! has('gui_running')
 	" Instantly leave insert mode when pressing <Esc> {{{
-		" This works by disabling the mapping timeout completely in normal mode,
-		" and enabling it in insert mode with a very low timeout length.
 		augroup FastEscape
 			autocmd!
 
-			set notimeout
-			set ttimeout
-			set timeoutlen=10
-
-			au InsertEnter * set timeout
-			au InsertLeave * set notimeout
+			au InsertEnter * set timeoutlen=0
+			au InsertLeave * set timeoutlen=1000
 		augroup END
 	" }}}
 	" Change cursor color in insert mode {{{
-		let &t_SI="]12;\#89b6e2\x7"
-		let &t_EI="]12;\#dd4010\x7"
+		if $TMUX != ''
+			" tmux
+			let &t_SI = 'Ptmux;]12;#89b6e2\'
+			let &t_EI = 'Ptmux;]12;#dd4010\'
+		elseif &term == 'rxvt-256color'
+			" urxvt
+			let &t_SI = ']12;#89b6e2'
+			let &t_EI = ']12;#dd4010'
+		endif
 	" }}}
 	" Use custom fillchars/listchars/showbreak icons {{{
 		set list
