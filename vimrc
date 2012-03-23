@@ -39,7 +39,7 @@
 	set scrolljump=10
 	set scrolloff=10
 	set shortmess=atToOI
-	set showcmd
+	set noshowcmd
 	set noshowmode
 	set smartcase
 	set nostartofline
