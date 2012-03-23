@@ -112,3 +112,6 @@
 [submodule "ftbundle/css/css3"]
 	path = ftbundle/css/css3
 	url = git://github.com/hail2u/vim-css3-syntax.git
+[submodule "ftbundle/mako/mako"]
+	path = ftbundle/mako/mako
+	url = git://github.com/sophacles/vim-bundle-mako.git
