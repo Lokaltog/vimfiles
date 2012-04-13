@@ -32,6 +32,7 @@
 	set lazyredraw
 	set linebreak
 	set nomodeline
+	set mouse=nvr
 	set nonumber
 	set numberwidth=4
 	set pumheight=10
