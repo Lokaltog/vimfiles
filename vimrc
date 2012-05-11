@@ -69,7 +69,7 @@
 		set foldtext=FoldText()
 	" }}}
 	" Wild menu {{{
-		set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpe?g,*.png,*.xpm,*.gif,*.pyc,*/.tox/*,*.egg-info/*
+		set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*/.tox/*,*.egg-info/*
 		set wildmenu
 		set wildmode=list:longest,full
 	" }}}
