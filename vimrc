@@ -22,7 +22,7 @@
 	set diffopt+=context:3
 	set encoding=utf-8
 	set noerrorbells visualbell t_vb= " Disable all bells
-	set formatoptions=roqwnl1 " Add 'a' for autoformatting of paragraphs
+	set formatoptions=tcrqwnl1 " Add 'a' for autoformatting of paragraphs
 	set hidden
 	set history=1000
 	set hlsearch
