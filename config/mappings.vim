@@ -47,6 +47,11 @@ let mapleader = ','
 	cnoremap s/ <C-R>=VerymagicSearchCommand()<CR>
 " }}}
 " Split window mappings {{{
+	set <M-k>=k
+	set <M-j>=j
+	set <M-h>=h
+	set <M-l>=l
+
 	nnoremap <M-k> <C-w>k
 	nnoremap <M-j> <C-w>j
 	nnoremap <M-h> <C-w>h

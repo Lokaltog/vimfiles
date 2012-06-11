@@ -4,6 +4,7 @@ endif
 
 if ! has('gui_running')
 	" Instantly leave insert mode when pressing <Esc> {{{
+		set ttimeoutlen=10
 		augroup FastEscape
 			autocmd!
 
