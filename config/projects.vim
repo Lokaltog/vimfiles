@@ -20,9 +20,16 @@ if ! empty(s:projectpath) && isdirectory(s:projectpath)
 		set cscopetag
 		set cscopetagorder=0
 	" }}}
+	function! s:SourceTags() " {{{
+		let hlfile = s:projectpath .'/project/types_'. expand('%:e') .'.taghl'
+
+		if filereadable(hlfile)
+			silent! exec 'source '. hlfile
+		endif
+	endfunction " }}}
 	augroup Project " {{{
 		autocmd!
 
-		au BufReadPost,CursorHold * silent! exec 'source '. s:projectpath .'/project/types_'. expand('%:e') .'.taghl'
+		au BufReadPost,CursorHold * call s:SourceTags()
 	augroup END " }}}
 endif
