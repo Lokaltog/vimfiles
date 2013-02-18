@@ -3,6 +3,7 @@
 
 " Load Unbundle {{{
 	runtime bundle/unbundle/unbundle.vim
+	set rtp+=~/powerline/powerline/bindings/vim
 " }}}
 " Source viminit files {{{
 	runtime! config/**/*.vim
@@ -40,7 +41,7 @@
 	set scrolljump=10
 	set scrolloff=10
 	set shortmess=atToOI
-	set noshowcmd
+	set showcmd
 	set noshowmode
 	set smartcase
 	set nostartofline
