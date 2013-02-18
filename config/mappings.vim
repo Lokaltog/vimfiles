@@ -16,35 +16,55 @@ let mapleader = ','
 	vnoremap <silent> <Leader>a:  :Tabularize /:/l0l1<CR>
 " }}}
 " Buffer mappings {{{
-	nnoremap <silent> <Leader>d :bd<CR>
+	nnoremap <silent> <Leader>bd :bd<CR>
 " }}}
 " Quick edit .vimrc {{{
 	nnoremap <silent> <Leader>ev :edit   $MYVIMRC<CR>
 	nnoremap <silent> <Leader>sv :source $MYVIMRC<CR>
 " }}}
-" Enter command mode quickly {{{
-	nnoremap ; :
+" Handy space/cr mappings {{{
+	vmap <silent> <Space> ,c<space>
+	nmap <silent> <Space> ,c<space>
+	nnoremap <silent> <CR> o<esc>
 " }}}
 " Clear search highlighting {{{
 	nnoremap <silent> <Leader>/ :nohlsearch<CR>
 " }}}
-" Sudo write {{{
-	command! -bar -nargs=0 W silent! exec "write !sudo tee % >/dev/null" | silent! edit!
-" }}}
-" Fix broken vim regexes when searching {{{
-	" http://stevelosh.com/blog/2010/09/coming-home-to-vim/#important-vimrc-lines
-	function! VerymagicSearchCommand()
-		" Checks if we already specified that we're using very magic regexps
-		" in the search command
-		if match(getcmdline(), '\\v') == -1
-			return 's/\v'
-		endif
+" Swap default ex mappings with cmdwindow {{{
+	" Fix broken vim regexes when searching {{{
+		function! VerymagicSearchCommand()
+			let curline = getline(line('.'))
+			" Check if we're performing a search
+			if curline[col('.') - 2] != 's'
+				return '/'
+			endif
+			" Check if we already specified that we're using very magic regexps
+			" in the search command
+			if match(curline, '\\v') == -1
+				return '/\v'
+			endif
 
-		return 's/'
-	endfunction
-	nnoremap / /\v
-	vnoremap / /\v
-	cnoremap s/ <C-R>=VerymagicSearchCommand()<CR>
+			return '/'
+		endfunction
+	" }}}
+	" Enter quickly with semicolon
+	nnoremap ; q:i
+	xnoremap ; q:i
+	nnoremap : ;
+	xnoremap : ;
+	nnoremap / q/i\v
+	xnoremap / q/i\v
+	nnoremap ? q?i
+	xnoremap ? q?i
+	nnoremap q: :
+	xnoremap q: :
+	nnoremap q/ /
+	xnoremap q/ /
+	nnoremap q? ?
+	xnoremap q? ?
+	" Exit quickly with escape
+	autocmd CmdwinEnter * nnoremap <buffer> <esc> :q<cr>
+	autocmd CmdwinEnter * inoremap <buffer> / <C-R>=VerymagicSearchCommand()<CR>
 " }}}
 " Split window mappings {{{
 	set <M-k>=k

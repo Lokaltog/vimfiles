@@ -1,8 +1,7 @@
-if &t_Co == 256
-	colo distinguished
-endif
-
-if ! has('gui_running')
+if ! has('gui_running') && $TERM =~# 'xterm-256color'
+	" Set colorscheme {{{
+		colo distinguished
+	" }}}
 	" Instantly leave insert mode when pressing <Esc> {{{
 		set ttimeoutlen=10
 		augroup FastEscape
@@ -13,15 +12,8 @@ if ! has('gui_running')
 		augroup END
 	" }}}
 	" Change cursor color in insert mode {{{
-		if $TMUX != ''
-			" tmux
-			let &t_SI = 'Ptmux;]12;#89b6e2\'
-			let &t_EI = 'Ptmux;]12;#dd4010\'
-		elseif &term == 'rxvt-256color'
-			" urxvt
-			let &t_SI = ']12;#89b6e2'
-			let &t_EI = ']12;#dd4010'
-		endif
+		let &t_SI = ']50;CustomCursorColor=#89b6e2;BlinkingCursorEnabled=true'
+		let &t_EI = ']50;CustomCursorColor=#dd4010;BlinkingCursorEnabled=false'
 	" }}}
 	" Use custom fillchars/listchars/showbreak icons {{{
 		set list
