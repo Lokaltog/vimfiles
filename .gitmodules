@@ -82,9 +82,6 @@
 [submodule "ftbundle/genshi/genshi"]
 	path = ftbundle/genshi/genshi
 	url = git://github.com/vim-scripts/genshi.vim.git
-[submodule "ftbundle/python/python"]
-	path = ftbundle/python/python
-	url = git://github.com/Lokaltog/python-syntax.git
 [submodule "ftbundle/python/cute-python"]
 	path = ftbundle/python/cute-python
 	url = git://github.com/ehamberg/vim-cute-python.git
