@@ -124,3 +124,6 @@
 [submodule "ftbundle/mako/mako"]
 	path = ftbundle/mako/mako
 	url = git://github.com/sophacles/vim-bundle-mako.git
+[submodule "ftbundle/python/jedi"]
+	path = ftbundle/python/jedi
+	url = git://github.com/davidhalter/jedi-vim.git
