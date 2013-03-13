@@ -3,10 +3,10 @@
 
 " Load Unbundle {{{
 	runtime bundle/unbundle/unbundle.vim
-	set rtp+=~/powerline/powerline/bindings/vim
 " }}}
 " Source viminit files {{{
 	runtime! config/**/*.vim
+	set rtp+=~/powerline/powerline/bindings/vim
 " }}}
 " Basic configuration {{{
 	filetype plugin indent on
@@ -17,20 +17,19 @@
 	set clipboard=unnamed,unnamedplus,autoselect
 	set colorcolumn+=76
 	set nocompatible
-	set completeopt=menu,longest
+	set completeopt=menu,menuone
 	set conceallevel=2
 	set confirm
 	set diffopt+=context:3
 	set encoding=utf-8
 	set noerrorbells visualbell t_vb= " Disable all bells
-	set formatoptions=tcrqwnl1 " Add 'a' for autoformatting of paragraphs
+	set formatoptions=tcrqwnl1
 	set hidden
 	set history=1000
 	set hlsearch
 	set ignorecase
 	set incsearch
 	set laststatus=2
-	set lazyredraw
 	set linebreak
 	set nomodeline
 	set mouse=nvr
