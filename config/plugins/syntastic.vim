@@ -11,4 +11,4 @@ let g:syntastic_mode_map = {
 "
 " W191: Tabs for indentation
 " E501: Too long line
-let g:syntastic_python_checker_args = '--ignore=W191,E501,E121,E122,E123'
+let g:syntastic_python_flake8_args = '--ignore=W191,E501,E121,E122,E123,E128'
