@@ -11,13 +11,16 @@ augroup Whitespace " {{{
 	autocmd!
 	" Remove trailing whitespace from selected filetypes {{{
 		function! s:StripTrailingWhitespace()
-			normal mZ
-
-			%s/\s\+$//e
-
-			normal `Z
+			normal! mZgg0
+			while search('\v\s+$', 'W') > 0
+				if synIDattr(synID(line('.'), col('.') - 1, 1), 'name') !~? '\v(comment|doc)'
+					silent s/\v\s+$//e
+					undojoin
+				endif
+			endwhile
+			normal! `Z
 		endfunction
 
-		au FileType html,mako,css,sass,stylus,javascript,coffee,php,python,ruby,psql,vim au BufWritePre <buffer> :silent! call <SID>StripTrailingWhitespace()
+		au FileType html,mako,stylus,javascript,python,psql,vim au BufWritePre <buffer> :silent! call s:StripTrailingWhitespace()
 	" }}}
 augroup END " }}}
