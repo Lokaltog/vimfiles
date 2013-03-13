@@ -91,9 +91,6 @@
 [submodule "ftbundle/python/python"]
 	path = ftbundle/python/python
 	url = git://github.com/Lokaltog/python-syntax.git
-[submodule "ftbundle/coffee/coffee"]
-	path = ftbundle/coffee/coffee
-	url = git://github.com/kchmck/vim-coffee-script.git
 [submodule "ftbundle/python/cute-python"]
 	path = ftbundle/python/cute-python
 	url = git://github.com/ehamberg/vim-cute-python.git
@@ -103,9 +100,6 @@
 [submodule "ftbundle/pgsql/pgsql"]
 	path = ftbundle/pgsql/pgsql
 	url = git://github.com/exu/pgsql.vim.git
-[submodule "ftbundle/coffee/cute-coffee"]
-	path = ftbundle/coffee/cute-coffee
-	url = git://github.com/Lokaltog/vim-cute-coffee.git
 [submodule "ftbundle/stylus/stylus"]
 	path = ftbundle/stylus/stylus
 	url = git://github.com/Lokaltog/vim-stylus.git
