@@ -1,8 +1,9 @@
-let g:syntastic_enable_signs = 0
+"let g:syntastic_enable_signs = 0
 let g:syntastic_mode_map = {
-	\ 'mode': 'active',
-	\ 'passive_filetypes': ['c', 'javascript'],
+	\ 'mode': 'active'
 	\ }
+
+let g:syntastic_javascript_jshint_conf = '~/sync/dotfiles/.jshintrc'
 
 " Configure flake8 syntax checker
 "
