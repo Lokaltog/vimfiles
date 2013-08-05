@@ -32,9 +32,6 @@
 [submodule "bundle/unbundle"]
 	path = bundle/unbundle
 	url = git://github.com/sunaku/vim-unbundle.git
-[submodule "bundle/indent-object"]
-	path = bundle/indent-object
-	url = git://github.com/michaeljsmith/vim-indent-object.git
 [submodule "bundle/camelcasemotion"]
 	path = bundle/camelcasemotion
 	url = git://github.com/bkad/CamelCaseMotion.git
@@ -44,18 +41,9 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = git://github.com/ervandew/supertab.git
-[submodule "bundle/zencoding"]
-	path = bundle/zencoding
-	url = git://github.com/mattn/zencoding-vim.git
 [submodule "bundle/sauce"]
 	path = bundle/sauce
 	url = git://github.com/joonty/vim-sauce.git
-[submodule "bundle/vdebug"]
-	path = bundle/vdebug
-	url = git://github.com/joonty/vdebug.git
-[submodule "bundle/eunuch"]
-	path = bundle/eunuch
-	url = git://github.com/tpope/vim-eunuch.git
 [submodule "bundle/youcompleteme"]
 	path = bundle/youcompleteme
 	url = git://github.com/Valloric/YouCompleteMe.git
@@ -73,21 +61,12 @@
 [submodule "ftbundle/nginx/nginx"]
 	path = ftbundle/nginx/nginx
 	url = git://github.com/mutewinter/nginx.vim.git
-[submodule "ftbundle/haml/haml"]
-	path = ftbundle/haml/haml
-	url = git://github.com/tpope/vim-haml.git
 [submodule "ftbundle/markdown/markdown"]
 	path = ftbundle/markdown/markdown
 	url = git://github.com/tpope/vim-markdown.git
-[submodule "ftbundle/genshi/genshi"]
-	path = ftbundle/genshi/genshi
-	url = git://github.com/vim-scripts/genshi.vim.git
 [submodule "ftbundle/python/cute-python"]
 	path = ftbundle/python/cute-python
 	url = git://github.com/ehamberg/vim-cute-python.git
-[submodule "ftbundle/html/sparkup"]
-	path = ftbundle/html/sparkup
-	url = git://github.com/Lokaltog/sparkup.git
 [submodule "ftbundle/pgsql/pgsql"]
 	path = ftbundle/pgsql/pgsql
 	url = git://github.com/exu/pgsql.vim.git
@@ -112,3 +91,6 @@
 [submodule "ftbundle/python/jedi"]
 	path = ftbundle/python/jedi
 	url = git://github.com/davidhalter/jedi-vim.git
+[submodule "ftbundle/jade/jade"]
+	path = ftbundle/jade/jade
+	url = git://github.com/digitaltoad/vim-jade.git
