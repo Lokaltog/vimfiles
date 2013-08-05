@@ -39,10 +39,12 @@
 	set report=0
 	set scrolljump=10
 	set scrolloff=10
+	set shell=/bin/sh " syntastic fix
 	set shortmess=atToOI
 	set showcmd
 	set noshowmode
 	set smartcase
+	set smartindent
 	set nostartofline
 	set noswapfile
 	set switchbuf=useopen,usetab
@@ -69,7 +71,7 @@
 		set foldtext=FoldText()
 	" }}}
 	" Wild menu {{{
-		set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*/.tox/*,*.egg-info/*
+		set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,*.pyc,*/.tox/*,*.egg-info/*,*/node_modules/*
 		set wildmenu
 		set wildmode=list:longest,full
 	" }}}
