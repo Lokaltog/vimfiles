@@ -12,4 +12,4 @@ let g:syntastic_javascript_jshint_conf = '~/sync/dotfiles/.jshintrc'
 "
 " W191: Tabs for indentation
 " E501: Too long line
-let g:syntastic_python_flake8_args = '--ignore=W191,E501,E121,E122,E123,E128'
+let g:syntastic_python_flake8_args = '--ignore=W191,E501,E121,E122,E123,E126,E128'
