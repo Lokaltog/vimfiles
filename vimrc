@@ -41,7 +41,6 @@
 	set scrolloff=10
 	set shell=/bin/sh " syntastic fix
 	set shortmess=atToOI
-	set showcmd
 	set noshowmode
 	set smartcase
 	set smartindent
